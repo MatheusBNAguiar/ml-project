@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "indent": ["error", 4],
+    "no-shadow": [2, {
+      "allow": ["done"]
+    }],
+    "global-require": "off",
+    "radix": "off",
+    "no-new": "off",
+    "max-len": "off",
+    "vue/valid-v-for": "off",
+    "import/prefer-default-export": "off",
+    "import/no-dynamic-require": "off",
+    "default-case": "off",
+    "no-extend-native": "off",
+    "no-underscore-dangle": "off",
+    "object-curly-newline": "off",
+    "require-v-for-key": "off",
+    "no-param-reassign": "off"
+  }
+}
