@@ -1,5 +1,7 @@
 const rootPath = __dirname;
-const { parseFiles } = require('./scripts/parse');
+const { buildFiles } = require('./scripts/build');
+const { testClassifiers } = require('./scripts/classify');
+
 const params = {};
 
 for (const args of process.argv) {
@@ -10,11 +12,19 @@ for (const args of process.argv) {
 }
 
 function parse() {
-    console.log('Parsing files\n')
+    console.log('Parsing files\n');
     const { type } = params;
-    parseFiles(rootPath, type)
+    buildFiles(rootPath, type);
 }
 
-if(process.argv.indexOf('parse')!==-1){
+function test() {
+    console.log('Testing algorithms \n');
+    testClassifiers(rootPath);
+}
+
+if (process.argv.indexOf('parse') !== -1) {
     parse();
+}
+if (process.argv.indexOf('test') !== -1) {
+    test();
 }
