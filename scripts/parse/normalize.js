@@ -1,3 +1,14 @@
+/**
+ * The module used to normalize data
+ * @module parse/normalize
+ * */
+
+/**
+ *
+ *
+ * @param {*} textArray
+ * @returns {Array}
+ */
 function removeBreakLineContent(textArray) {
     return textArray.reduce((finalGroup, actualTerm) => {
         const processedTerm = actualTerm.replace(/\n/g, '');
@@ -14,15 +25,15 @@ function normalizeArray(htmlArray) {
         const [type, attr, ...text] = actualData;
         const processedText = removeBreakLineContent(text);
         if (processedText.length) {
-            const actualData = normalizedData[type] || [];
+            const data = normalizedData[type] || [];
             const compiledData = {
                 text: processedText,
             };
             if (Object.values(attr).length) {
                 compiledData.attr = Object.values(attr);
             }
-            actualData.push(compiledData);
-            normalizedData[type] = actualData;
+            data.push(compiledData);
+            normalizedData[type] = data;
         }
         return normalizedData;
     }, {});
