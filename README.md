@@ -1,4 +1,4 @@
-# Project Machine Learning - Neural Network
+# Project Machine Learning - Finding Page Type
 
 ## Objective
 
