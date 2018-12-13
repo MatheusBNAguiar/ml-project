@@ -2,10 +2,23 @@ const { readAndProcessJsonResult } = require('./utils/files');
 const natural = require('natural');
 const _ = require('lodash');
 
+/**
+ * Get a random number in an interval
+ * @param { Number } min The minimum limit
+ * @param { Number } max The max limit
+ * @returns { Number } The random generated number
+ */
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - (min + 1))) + min;
 }
 
+/**
+ * Get random data of a base data, being split in a certain percentage
+ * @param { Array } data
+ * @param { Number } splitPercentage The percentage, between 0 and 100 that
+ * the data will be splitted
+ * @param { Array } trainingSet Where the extracted data will be stored
+ */
 function splitTrainingSet(data, splitPercentage, trainingSet) {
     const dataCopy = data.slice(0);
     let dataLength = dataCopy.length;
@@ -18,6 +31,12 @@ function splitTrainingSet(data, splitPercentage, trainingSet) {
     return trainingSet;
 }
 
+/**
+ *
+ * @param {*} data
+ * @param { Number } splitPercentage The percentage, between 0 and 100 that
+ * the data will be splitted
+ */
 function getTrainingSet(data, splitPercentage) {
     const dataCopy = _.groupBy(data, ({ type }) => type);
     return Object.keys(dataCopy)
@@ -37,7 +56,7 @@ function addDataToClassifierAndTrain(classifierInstance, trainingSet) {
     classifierInstance.train();
 }
 
-function testClassifier(classifierInstance, testSet) { 
+function testClassifier(classifierInstance, testSet) {
     let success = 0;
     for (let i = 0; i < testSet.length; i += 1) {
         const data = testSet[i];

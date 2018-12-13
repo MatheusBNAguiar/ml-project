@@ -1,6 +1,6 @@
 /**
  * The module used to normalize data
- * @module parse/normalize
+ * @module Parse/Normalize
  * */
 
 /**

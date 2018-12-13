@@ -3,14 +3,8 @@ const fs = require('fs');
 
 /**
  * Some util functions to manipulate files
- * @module Files
+ * @module Utils/Files
  * */
-
-
-/**
- * The absolute path directing to the validated archive
- * @typedef { String } PathString
-*/
 
 /**
  * Get archives paths on recursive mode, filtering if it has the regex pattern

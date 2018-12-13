@@ -2,7 +2,7 @@ const { recFindByExt, readAndReturnFileText } = require('../utils/files');
 const { returnFinalModel } = require('./normalize');
 const { parseHTML } = require('./parser');
 
-/** @module parse */
+/** @module Parse */
 
 /**
  * It does get the archives, through the recursive file function, and then
